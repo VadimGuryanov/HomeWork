@@ -33,6 +33,6 @@ private fun getRules() {
 }
 
 inline fun printMes(mes: String) {
-    Thread.sleep(500)
+    //Thread.sleep(500)
     Log.i("print", mes)
 }
