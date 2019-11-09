@@ -35,7 +35,7 @@ class MessageFormFragment : Fragment() {
                             view.et_theme.text.toString(),
                             view.et_message.text.toString()
                         ),
-                        "tag"
+                        MainActivity.PREVIOUS_FRAGMENT
                     )
                     addToBackStack(MessageInfoFragment::class.java.name)
                     commit()

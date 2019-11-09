@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_messanger.*
 
-class MessangerFragment : Fragment() {
+class MessagerFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +27,11 @@ class MessangerFragment : Fragment() {
                         R.anim.enter_from_left,
                         R.anim.exit_to_right
                     )
-                    replace(R.id.fragment_container, MessageFormFragment.newInstance(), "tag")
+                    replace(
+                        R.id.fragment_container,
+                        MessageFormFragment.newInstance(),
+                        MainActivity.PREVIOUS_FRAGMENT
+                    )
                     addToBackStack(MessageFormFragment::class.java.name)
                     commit()
                 }
@@ -36,7 +40,7 @@ class MessangerFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance(): MessangerFragment = MessangerFragment()
+        fun newInstance(): MessagerFragment = MessagerFragment()
     }
 
 }

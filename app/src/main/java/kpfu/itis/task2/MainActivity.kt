@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.also {
                 it.beginTransaction().apply {
-                    add(R.id.fragment_container, ProfileFragment.newInstance(), "tag")
+                    add(R.id.fragment_container, ProfileFragment.newInstance(), PREVIOUS_FRAGMENT)
                     commit()
                 }
             }
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_favorite ->
                     if (!it.isChecked) goFavoriteFragment()
                 R.id.nav_send ->
-                    if (!it.isChecked) goMessangerFragment()
+                    if (!it.isChecked) goMessagerFragment()
             }
             addOnBackStackChangedListener()
             drawer_layout.closeDrawer(GravityCompat.START)
@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun goMessangerFragment() {
+    private fun goMessagerFragment() {
         supportFragmentManager.also {
             it.beginTransaction().apply {
-                replace(R.id.fragment_container, MessangerFragment.newInstance(), PREVIOUS_FRAGMENT)
-                addToBackStack(MessangerFragment::class.java.name)
+                replace(R.id.fragment_container, MessagerFragment.newInstance(), PREVIOUS_FRAGMENT)
+                addToBackStack(MessagerFragment::class.java.name)
                 commit()
             }
         }
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                             isChecked = true
                         }
                     }
-                    is MessangerFragment -> {
+                    is MessagerFragment -> {
                         nav_view.menu.getItem(3).apply {
                             toolbar.title = title
                             isChecked = true
@@ -143,7 +143,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val PREVIOUS_FRAGMENT = "previous fragment"
+        const val PREVIOUS_FRAGMENT = "previous fragment"
     }
 
 }

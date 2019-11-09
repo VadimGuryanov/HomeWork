@@ -29,12 +29,12 @@ class MessageInfoFragment : Fragment() {
         private const val THEME = "theme"
         private const val MESSAGE = "message"
 
-        fun newInstance(to_whom: String, theme: String, messsage: String): MessageInfoFragment =
+        fun newInstance(to_whom: String, theme: String, message: String): MessageInfoFragment =
             MessageInfoFragment().also {
                 Bundle().apply {
                     putString(WHOM, to_whom)
                     putString(THEME, theme)
-                    putString(MESSAGE, messsage)
+                    putString(MESSAGE, message)
                     it.arguments = this
                 }
             }
