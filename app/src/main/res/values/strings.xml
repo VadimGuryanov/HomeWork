@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">task2</string>
+    <string name="app_name">Fragments</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Guryanov Vadim</string>
+    <string name="nav_header_subtitle">guryvadim@mail.ru</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_send_message">Send message</string>
+    <string name="to_whom">To whom</string>
+    <string name="theme">Theme</string>
+    <string name="message">Message</string>
+    <string name="content">content</string>
 </resources>
