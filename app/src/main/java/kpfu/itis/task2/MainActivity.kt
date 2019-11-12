@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
         drawerToggle.isDrawerIndicatorEnabled = true
         drawer_layout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
-        title = nav_view.menu.getItem(0).title
-        nav_view.menu.getItem(0).isChecked = true
         if (savedInstanceState == null) {
             supportFragmentManager.also {
                 it.beginTransaction().apply {
@@ -35,100 +33,43 @@ class MainActivity : AppCompatActivity() {
                     commit()
                 }
             }
-            addOnBackStackChangedListener()
         }
         nav_view.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home ->
-                    if (!it.isChecked) goProfileFragment()
+                    if (!it.isChecked) navigateTo(ProfileFragment.newInstance(), PREVIOUS_FRAGMENT)
                 R.id.nav_gallery ->
-                    if (!it.isChecked) goGalleryFragment()
+                    if (!it.isChecked) navigateTo(GalleryFragment.newInstance(), PREVIOUS_FRAGMENT)
                 R.id.nav_favorite ->
-                    if (!it.isChecked) goFavoriteFragment()
+                    if (!it.isChecked) navigateTo(FavoriteFragment.newInstance(), PREVIOUS_FRAGMENT)
                 R.id.nav_send ->
-                    if (!it.isChecked) goMessagerFragment()
+                    if (!it.isChecked) navigateTo(MessagerFragment.newInstance(), PREVIOUS_FRAGMENT)
             }
-            addOnBackStackChangedListener()
             drawer_layout.closeDrawer(GravityCompat.START)
             true
         }
-    }
-
-    private fun goProfileFragment() {
-        supportFragmentManager.also {
-            it.beginTransaction().apply {
-                replace(R.id.fragment_container, ProfileFragment.newInstance(), PREVIOUS_FRAGMENT)
-                addToBackStack(ProfileFragment::class.java.name)
-                commit()
-            }
-        }
-    }
-
-    private fun goGalleryFragment() {
-        supportFragmentManager.also {
-            it.beginTransaction().apply {
-                replace(R.id.fragment_container, GalleryFragment.newInstance(), PREVIOUS_FRAGMENT)
-                addToBackStack(GalleryFragment::class.java.name)
-                commit()
-            }
-        }
-    }
-
-    private fun goMessagerFragment() {
-        supportFragmentManager.also {
-            it.beginTransaction().apply {
-                replace(R.id.fragment_container, MessagerFragment.newInstance(), PREVIOUS_FRAGMENT)
-                addToBackStack(MessagerFragment::class.java.name)
-                commit()
-            }
-        }
-    }
-
-    private fun goFavoriteFragment() {
-        supportFragmentManager.also {
-            it.beginTransaction().apply {
-                replace(R.id.fragment_container, FavoriteFragment.newInstance(), PREVIOUS_FRAGMENT)
-                addToBackStack(FavoriteFragment::class.java.name)
-                commit()
-            }
-        }
-    }
-
-    private fun addOnBackStackChangedListener() {
         supportFragmentManager.apply {
             addOnBackStackChangedListener {
                 when (findFragmentByTag(PREVIOUS_FRAGMENT)) {
-                    is ProfileFragment -> {
-                        nav_view.menu.getItem(0).apply {
-                            toolbar.title = title
-                            isChecked = true
-                        }
-                    }
-                    is GalleryFragment -> {
-                        nav_view.menu.getItem(1).apply {
-                            toolbar.title = title
-                            isChecked = true
-                        }
-                    }
-                    is FavoriteFragment -> {
-                        nav_view.menu.getItem(2).apply {
-                            toolbar.title = title
-                            isChecked = true
-                        }
-                    }
-                    is MessagerFragment -> {
-                        nav_view.menu.getItem(3).apply {
-                            toolbar.title = title
-                            isChecked = true
-                        }
-                    }
-                    is MessageInfoFragment -> {
-                        toolbar.title = "Message information"
-                    }
-                    is MessageFormFragment -> {
-                        toolbar.title = "Message form"
-                    }
+                    is ProfileFragment ->
+                        nav_view.menu.getItem(0).isChecked = true
+                    is GalleryFragment ->
+                        nav_view.menu.getItem(1).isChecked = true
+                    is FavoriteFragment ->
+                        nav_view.menu.getItem(2).isChecked = true
+                    is MessagerFragment ->
+                        nav_view.menu.getItem(3).isChecked = true
                 }
+            }
+        }
+    }
+
+    private fun navigateTo(fragment: Fragment, tag: String) {
+        supportFragmentManager.also {
+            it.beginTransaction().apply {
+                replace(R.id.fragment_container, fragment, tag)
+                addToBackStack(fragment::class.java.name)
+                commit()
             }
         }
     }

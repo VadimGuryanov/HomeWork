@@ -12,8 +12,11 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? =
-        inflater.inflate(R.layout.fragment_favorite, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_favorite, container, false)
+        activity?.title = getString(R.string.menu_favorite)
+        return view
+    }
 
     companion object {
         fun newInstance(): FavoriteFragment = FavoriteFragment()

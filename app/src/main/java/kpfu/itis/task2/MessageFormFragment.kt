@@ -19,6 +19,7 @@ class MessageFormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.title = getString(R.string.message_form)
         btn_send.setOnClickListener {
             fragmentManager.also {
                 it?.popBackStack()

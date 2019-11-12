@@ -12,8 +12,11 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? =
-        inflater.inflate(R.layout.fragment_profile, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        activity?.title = getString(R.string.menu_profile)
+        return view
+    }
 
     companion object {
         fun newInstance(): ProfileFragment = ProfileFragment()

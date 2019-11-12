@@ -12,8 +12,11 @@ class GalleryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? =
-        inflater.inflate(R.layout.fragment_gallery, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_gallery, container, false)
+        activity?.title = getString(R.string.menu_gallery)
+        return view
+    }
 
     companion object {
         fun newInstance(): GalleryFragment = GalleryFragment()

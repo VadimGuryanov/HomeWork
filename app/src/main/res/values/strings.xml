@@ -17,4 +17,6 @@
     <string name="theme">Theme</string>
     <string name="message">Message</string>
     <string name="content">content</string>
+    <string name="message_form">Message form</string>
+    <string name="message_info">Message info</string>
 </resources>

@@ -18,9 +18,9 @@ class MessagerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.title = getString(R.string.menu_send_message)
         btn_send.setOnClickListener {
-            fragmentManager.also {
-                it?.beginTransaction()?.apply {
+            fragmentManager?.beginTransaction()?.apply {
                     setCustomAnimations(
                         R.anim.enter_from_right,
                         R.anim.exit_to_left,
@@ -34,7 +34,6 @@ class MessagerFragment : Fragment() {
                     )
                     addToBackStack(MessageFormFragment::class.java.name)
                     commit()
-                }
             }
         }
     }

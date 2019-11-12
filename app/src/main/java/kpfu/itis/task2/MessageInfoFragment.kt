@@ -18,6 +18,7 @@ class MessageInfoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.title = getString(R.string.message_info)
         tv_to_whom_content.text = arguments?.getString(WHOM) ?: "Whom"
         tv_theme_content.text = arguments?.getString(THEME) ?: "Theme"
         tv_message_content.text = arguments?.getString(MESSAGE) ?: "Message"
