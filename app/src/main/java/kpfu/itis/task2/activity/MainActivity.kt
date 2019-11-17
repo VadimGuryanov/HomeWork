@@ -18,7 +18,6 @@ class MainActivity : AppCompatActivity() {
             bnv_main.menu.getItem(1).isChecked = true
             supportFragmentManager.beginTransaction().apply {
                 add(R.id.container_main, ProfileFragment.newInstance())
-                addToBackStack(ProfileFragment::class.java.name)
                 commit()
             }
         }
@@ -38,6 +37,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> false
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        when {
+            fragmentManager.backStackEntryCount > 0 -> fragmentManager.popBackStack()
+            else -> super.onBackPressed()
         }
     }
 
