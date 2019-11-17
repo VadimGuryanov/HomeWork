@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">task2</string>
+    <string name="app_name">Bottom Navigation</string>
+    <string name="favorite">favorite</string>
+    <string name="profile">profile</string>
+    <string name="notes">notes</string>
+    <string name="add_note">Add note</string>
+    <string name="title">title</string>
+    <string name="content">content</string>
+    <string name="text_in_content">Yours is the Earth and everything that\'s in it, And-which is more-you\'ll be a Man, my son!</string>
+    <string name="title_in_item_note">Title</string>
+    <string name="text_in_description">As this is just a custom ImageView and not a custom Drawable or a combinati bla bla bla</string>
 </resources>
