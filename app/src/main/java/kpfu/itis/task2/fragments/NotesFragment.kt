@@ -45,6 +45,14 @@ class NotesFragment : Fragment() {
         setRecyclerViewItemTouchListener()
     }
 
+    fun onPositiveClick(note: Note, i: String) {
+        adapterNote?.add(note, i)
+    }
+
+    fun onDelete(note: Note) {
+        adapterNote?.delete(note)
+    }
+
     private fun setRecyclerViewItemTouchListener() {
         val itemTouchCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
             override fun onMove(
@@ -60,14 +68,6 @@ class NotesFragment : Fragment() {
         }
         val itemTouchHelper = ItemTouchHelper(itemTouchCallback)
         itemTouchHelper.attachToRecyclerView(rv_notes)
-    }
-
-    fun onPositiveClick(note: Note, i: String) {
-        adapterNote?.add(note, i)
-    }
-
-    fun onDelete(note: Note) {
-        adapterNote?.delete(note)
     }
 
     companion object {
