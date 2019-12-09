@@ -27,11 +27,9 @@ class MainActivity : AppCompatActivity() {
         drawer_layout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
         if (savedInstanceState == null) {
-            supportFragmentManager.also {
-                it.beginTransaction().apply {
+            supportFragmentManager.beginTransaction().apply {
                     add(R.id.fragment_container, ProfileFragment.newInstance(), PREVIOUS_FRAGMENT)
                     commit()
-                }
             }
         }
         nav_view.setNavigationItemSelectedListener {

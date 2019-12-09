@@ -19,24 +19,24 @@ class MessageInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = getString(R.string.message_info)
-        tv_to_whom_content.text = arguments?.getString(WHOM) ?: "Whom"
-        tv_theme_content.text = arguments?.getString(THEME) ?: "Theme"
-        tv_message_content.text = arguments?.getString(MESSAGE) ?: "Message"
+        tv_to_whom_content.text = arguments?.getString(ARG_WHOM) ?: "Whom"
+        tv_theme_content.text = arguments?.getString(ARG_THEME) ?: "Theme"
+        tv_message_content.text = arguments?.getString(ARG_MESSAGE) ?: "Message"
     }
 
     companion object {
 
-        private const val WHOM = "whom"
-        private const val THEME = "theme"
-        private const val MESSAGE = "message"
+        private const val ARG_WHOM = "whom"
+        private const val ARG_THEME = "theme"
+        private const val ARG_MESSAGE = "message"
 
         fun newInstance(to_whom: String, theme: String, message: String): MessageInfoFragment =
-            MessageInfoFragment().also {
+            MessageInfoFragment().apply {
                 Bundle().apply {
-                    putString(WHOM, to_whom)
-                    putString(THEME, theme)
-                    putString(MESSAGE, message)
-                    it.arguments = this
+                    putString(ARG_WHOM, to_whom)
+                    putString(ARG_THEME, theme)
+                    putString(ARG_MESSAGE, message)
+                    arguments = this
                 }
             }
 

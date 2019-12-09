@@ -21,9 +21,9 @@ class MessageFormFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = getString(R.string.message_form)
         btn_send.setOnClickListener {
-            fragmentManager.also {
-                it?.popBackStack()
-                it?.beginTransaction()?.apply {
+            fragmentManager?.also {
+                it.popBackStack()
+                it.beginTransaction().apply {
                     setCustomAnimations(
                         R.anim.enter_from_top,
                         R.anim.enter_from_top,
