@@ -42,9 +42,9 @@ class MusicService : Service() {
 
     fun pause(view: View, music: Int) {
         Log.e("p", "ok")
-//        if (mediaPlayer?.isPlaying == true) {
-        mediaPlayer?.pause()
-//        }
+        if (mediaPlayer?.isPlaying == true) {
+            mediaPlayer?.pause()
+        }
     }
 
     fun close() {
