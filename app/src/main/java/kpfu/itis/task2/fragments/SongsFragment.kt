@@ -18,7 +18,6 @@ class SongsFragment : Fragment() {
     private var adapterSong: SongAdapter? = null
     private lateinit var iMusicPlayer: IMusicPlayer
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,8 +31,8 @@ class SongsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         iMusicPlayer = activity as IMusicPlayer
-        adapterSong = SongAdapter(SongRepository.songsList) {
-            iMusicPlayer.playSong(it)
+        adapterSong = SongAdapter(SongRepository.songsList) { song, position ->
+            iMusicPlayer.playSong(song, position)
         }
         rv_song.apply {
             layoutManager = LinearLayoutManager(activity)
@@ -44,42 +43,7 @@ class SongsFragment : Fragment() {
     }
 
     interface IMusicPlayer {
-        fun playSong(song: Song)
+        fun playSong(song: Song, position: Int)
     }
-
-//    private fun clickSong(song: Song) {
-//        if (mediaPlayer == null) {
-//            mediaPlayer = MediaPlayer.create(context, song.music)
-//            mediaPlayer?.start()
-//        } else {
-//            mediaPlayer?.stop()
-//            mediaPlayer = MediaPlayer.create(context, song.music)
-//        }
-//    }
-
-//
-//    private fun playMusic(song: Song) {
-//        if (mediaPlayer == null) {
-//            mediaPlayer = MediaPlayer.create(context, song.music)
-//        } else if () {
-//
-//        }
-//        var isPlaying = mediaPlayer?.isPlaying ?: false
-//        if (!isPlaying) {
-//            mediaPlayer = MediaPlayer.create(context, song.music)
-//            mediaPlayer?.start()
-//        } else {
-//            mediaPlayer?.pause()
-//        }
-//    }
-
-//        if (mediaPlayer.isPlaying && mediaPlayer.) {
-//            mediaPlayer.stop()
-//            Log.e("tag-stop",mediaPlayer.isPlaying.toString())
-//        } else {
-//            mediaPlayer.start()
-//            Log.e("tag-play",mediaPlayer.isPlaying.toString())
-//        }
-
 
 }

@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity(), SongsFragment.IMusicPlayer {
         setContentView(R.layout.activity_main)
     }
 
-    override fun playSong(song: Song) {
-        startActivity(SongActivity.getIntent(this, song))
+    override fun playSong(song: Song, position: Int) {
+        startActivity(SongActivity.getIntent(this, song, position))
     }
 
 }

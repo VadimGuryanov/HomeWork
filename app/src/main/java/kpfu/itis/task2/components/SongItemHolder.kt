@@ -10,10 +10,10 @@ import kpfu.itis.task2.R
 
 class SongItemHolder(
     override val containerView: View,
-    private val clickLambda: (Song) -> Unit
+    private val clickLambda: (Song, Int) -> Unit
 ) : RecyclerView.ViewHolder(containerView), LayoutContainer {
 
-    fun bind(song: Song) {
+    fun bind(song: Song, position: Int) {
         containerView.apply {
             tv_title.text = song.title
             tv_description.text = song.description
@@ -21,13 +21,13 @@ class SongItemHolder(
             tv_time.text = song.time
             iv_song.setImageResource(song.cover)
             item_song.setOnClickListener {
-                clickLambda(song)
+                clickLambda(song, position)
             }
         }
     }
 
     companion object {
-        fun create(parent: ViewGroup, clickLambda: (Song) -> Unit) =
+        fun create(parent: ViewGroup, clickLambda: (Song, Int) -> Unit) =
             SongItemHolder(
                 LayoutInflater.from(parent.context).inflate(R.layout.item_song, parent, false),
                 clickLambda
