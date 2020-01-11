@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">task2</string>
+    <string name="to_do_nothing">To do nothing</string>
+    <string name="description">Va\'esse deireadh aep eigean, va\'esse eigh faidh\'ar</string>
+    <string name="time">1.01.2020 00:00</string>
+    <string name="todo">TODO</string>
+    <string name="save">save</string>
+    <string name="edit">edit</string>
+    <string name="settings">settings</string>
+    <string name="grant">receive</string>
+    <string name="snack_message">Location needed for todo.</string>
+    <string name="snack_message_settings">Enable permission in setting to get location</string>
 </resources>
