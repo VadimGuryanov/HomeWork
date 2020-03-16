@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="cnt_city">15</integer>
+    <integer name="permission_request_code">1</integer>
+    <integer name="lat">52</integer>
+    <integer name="lon">13</integer>
+
+    <integer name="degree_0">0</integer>
+    <integer name="degree_22">22</integer>
+    <integer name="degree_45">45</integer>
+    <integer name="degree_67">67</integer>
+    <integer name="degree_90">90</integer>
+    <integer name="degree_112">112</integer>
+    <integer name="degree_135">135</integer>
+    <integer name="degree_157">157</integer>
+    <integer name="degree_180">180</integer>
+    <integer name="degree_202">202</integer>
+    <integer name="degree_225">225</integer>
+    <integer name="degree_247">247</integer>
+    <integer name="degree_270">270</integer>
+    <integer name="degree_292">292</integer>
+    <integer name="degree_315">315</integer>
+    <integer name="degree_337">337</integer>
+    <integer name="degree_360">360</integer>
+
+    <integer name="temp_25">25</integer>
+    <integer name="temp_24">24</integer>
+    <integer name="temp_15">15</integer>
+    <integer name="temp_14">14</integer>
+    <integer name="temp_6">6</integer>
+    <integer name="temp_5">5</integer>
+    <integer name="temp_4">4</integer>
+    <integer name="temp_1">1</integer>
+    <integer name="temp_0">0</integer>
+
+    <integer name="size_300">300</integer>
+    <integer name="size_150">150</integer>
+</resources>

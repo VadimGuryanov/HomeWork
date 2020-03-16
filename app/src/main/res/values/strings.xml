@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">task2</string>
+    <string name="app_name">Weather</string>
+    <string name="city">Moscow</string>
+    <string name="weather">snow</string>
+    <string name="temp">-24\u2103</string>
+    <string name="cels">\u2103</string>
+    <string name="title">Current details</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="temp_max_min">+24/+30℃</string>
+    <string name="humidity_value">95%</string>
+    <string name="pressure_value">1000 mBar</string>
+    <string name="wind_value">1km/h NW</string>
+    <string name="settings">Settings</string>
+    <string name="grant">Granted</string>
+    <string name="snack_message">Snack message</string>
+    <string name="storage_permissions_not_granted">Storage permissions not granted</string>
 </resources>
